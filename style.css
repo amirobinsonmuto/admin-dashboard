@@ -1,0 +1,219 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* colors */
+:root {
+	--color-blue: #1992d4;
+	--color-orange: #ebb439;
+	--color-grey: #e2e8f0;
+}
+
+
+/* main sections */
+
+body {
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    grid-template-rows: 1fr 5fr;
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+.sidebar {
+    grid-row: 1 / -1;
+    width: clamp(240px, 20vw, 60rem);
+}
+
+.header {
+    grid-column: 2 / -1;
+}
+
+
+.main-container {
+    background-color: yellow;
+    grid-column: 2 / -1;
+}
+
+/* side bar */
+
+.sidebar {
+	padding: 12px;
+	display: grid;
+	grid-template-rows: repeat(3, min-content);
+	gap: 45px;
+	background-color: var(--color-blue);
+	color: #fff;
+}
+
+.nav-item {
+	display: grid;
+	grid-template-columns: 30px auto;
+	gap: 12px;
+	align-items: center;
+	margin-bottom: 5px;
+}
+
+.nav-item img {
+	justify-self: center;
+}
+
+.logo img {
+	width: 2em;
+}
+
+.logo p {
+	font-size: 1.5em;
+}
+
+/* header */
+
+.header {
+	display: grid;
+	grid-template-rows: 1fr 2fr;
+	grid-template-columns: 2fr 1fr;
+	margin: 20px 5%;
+	gap: 20px;
+}
+
+.header-upper-left {
+	display: grid;
+	grid-template-columns: min-content minmax(150px, 80%);
+	gap: 12px;
+}
+
+.header-upper-right {
+	justify-self: end;
+	align-items: center;
+	display: grid;
+	grid-template-columns: min-content min-content auto;
+	gap: 12px;
+}
+
+.searchbar{
+	background-color: var(--color-grey);
+	border-radius: 25px;
+}
+
+.header-lower-left {
+	display: grid;
+	gap: 12px;
+	grid-template-columns: min-content auto;
+	grid-template-rows: 1fr 1fr;
+	align-items: center;
+}
+
+.header-lower-left img {
+	grid-row: 1 / -1;
+}
+
+.header-lower-right {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	align-items: center;
+	gap: 8px;
+}
+
+.btn {
+	background-color: var(--color-blue);
+	border-radius: 25px;
+	padding: 10px;
+	width: 75px;
+	text-align: center;
+	color: white;
+	justify-self: end;
+}
+
+/* main container */
+
+.main-container {
+	display: grid;
+	grid-template-columns: 2fr 1fr;
+	grid-template-rows: 1fr 1fr;
+	background-color: var(--color-grey);
+	gap: 24px;
+	padding: 3%;
+}
+
+.your-projects {
+	grid-row: 1 / -1;
+	display: grid;
+	grid-template-rows: min-content auto;
+	gap: 12px;
+}
+
+.project-panels {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+	gap: 24px;
+}
+
+.announcements {
+	display: grid;
+	grid-template-rows: min-content auto;
+	gap: 12px;
+}
+
+.trending {
+	display: grid;
+	grid-template-rows: min-content auto;
+	gap: 12px;
+}
+
+[class$="panel"] {
+	background-color: #fff;
+	padding: 10%;
+	border-radius: 12px;
+	box-shadow: 0 3px 5px rgb(0 0 0 / 0.2);
+}
+
+.project-panel {
+	border-left: solid 8px var(--color-orange);
+}
+
+
